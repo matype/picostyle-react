@@ -4,7 +4,10 @@
   "description": "Picostyle for React",
   "main": "dist/picostyle-react.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clear && rollup -c",
+    "clear": "(rm -rf dist || true) && mkdir dist",
+    "test": "npm run build && size-limit",
+    "example": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,24 @@
   "bugs": {
     "url": "https://github.com/picostyle/picostyle-react/issues"
   },
-  "homepage": "https://github.com/picostyle/picostyle-react#readme"
+  "homepage": "https://github.com/picostyle/picostyle-react#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "rollup": "^0.47.6",
+    "rollup-plugin-uglify": "^2.0.1",
+    "size-limit": "^0.10.0",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "size-limit": [
+    {
+      "path": "dist/picostyle-react.js",
+      "limit": "399B"
+    }
+  ]
 }
