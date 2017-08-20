@@ -1,6 +1,6 @@
 {
   "name": "picostyle-react",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Picostyle for React",
   "main": "dist/picostyle-react.js",
   "scripts": {
